@@ -1,0 +1,17 @@
+{
+  "name": "sitespeed.io-compare",
+  "version": "1.0.0",
+  "description": "Compare sitespeed.io results",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress -p",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vio@beanon.com",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
