@@ -1,4 +1,7 @@
+// eslint-env node
 const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
+
 const context = path.join(__dirname, 'src');
 
 module.exports = {
@@ -29,7 +32,12 @@ module.exports = {
       }
     ]
   },
-  plugins: [],
+  plugins: [
+    new HtmlPlugin({
+      template: './index.html',
+      filename: 'index.html'
+    })
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'dist')
   }
