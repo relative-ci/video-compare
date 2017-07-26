@@ -8,8 +8,17 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json']
+  },
   module: {
-    rules: []
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
   },
   plugins: [],
   devServer: {
