@@ -1,0 +1,18 @@
+.root {
+  flex: 1 1 auto;
+  height: 100%;
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background: rgba(44, 62, 80, 0.1);
+  color: rgba(44, 62, 80, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
