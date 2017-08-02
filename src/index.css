@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
+  font-size: 87.5%;
+}
+
+a {
+  color: #2980b9;
+}
+
+a:hover,
+a:active {
+  color: #3498db;
+}

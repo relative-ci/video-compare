@@ -29,6 +29,21 @@ module.exports = {
         options: {
           emitWarnings: process.env.NODE_ENV !== 'production'
         }
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   },
@@ -40,5 +55,6 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist')
-  }
+  },
+  devtool: 'sourcemap'
 };
