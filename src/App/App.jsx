@@ -15,7 +15,7 @@ const AppResults = (props) => {
 
   return (
     <div className={styles.results}>
-      {urls.map(url => <Result key={url} url={url} />)}
+      {urls.map(url => <Result play={props.play} key={url} url={url} />)}
     </div>
   );
 };
@@ -26,7 +26,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      url: []
+      url: [],
+      play: false
     };
   }
 
@@ -36,14 +37,27 @@ class App extends React.Component {
     this.setState({ url });
   }
 
+  handleButtonClick = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      play: !this.state.play
+    });
+  }
+
   render() {
-    const ContentComponent = this.state.url && this.state.url.length !== 0
+    const Component = this.state.url && this.state.url.length !== 0
       ? AppResults
       : AppLoader;
 
     return (
       <div className={styles.root}>
-        <ContentComponent url={this.state.url} />
+        <header className={styles.header}>
+          <button onClick={this.handleButtonClick}>
+            {this.state.play ? 'Pause' : 'Play'}
+          </button>
+        </header>
+        <Component play={this.state.play} url={this.state.url} />
       </div>
     );
   }
