@@ -6,8 +6,8 @@ const Placeholder = () => (
   <p className={styles.placeholder}>Result</p>
 );
 
-const Video = ({ url = '' }) => (
-  <video src={url} />
+const Video = ({ className, url = '' }) => (
+  <video className={className} src={url} />
 );
 
 const Entry = (props) => {
@@ -21,7 +21,7 @@ const Entry = (props) => {
 
   return (
     <div className={styles.root}>
-      <Component {...props} />
+      <Component className={styles.placeholder} {...props} />
     </div>
   );
 };

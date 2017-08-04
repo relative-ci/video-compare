@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    const { url } = qs.parse(window.location.search);
+    const { url } = qs.parse(window.location.search.replace(/^\?/, ''));
 
     this.setState({ url });
   }

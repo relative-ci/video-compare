@@ -9,6 +9,7 @@ body {
 }
 
 body {
+  margin: 0;
   padding: 1rem;
   font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
   font-size: 87.5%;
