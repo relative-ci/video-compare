@@ -21,6 +21,7 @@ const AppResults = (props) => {
           key={url}
           play={props.play}
           url={url}
+          playbackRate={props.playbackRate}
         />
       ))}
     </div>
@@ -34,7 +35,8 @@ class App extends React.Component {
 
     this.state = {
       url: [],
-      play: false
+      play: false,
+      playbackRate: 1
     };
   }
 
@@ -51,6 +53,12 @@ class App extends React.Component {
     });
   }
 
+  handlePlaybackRateChange = (event) => {
+    this.setState({
+      playbackRate: event.target.value
+    });
+  }
+
   render() {
     const Component = this.state.url && this.state.url.length !== 0
       ? AppResults
@@ -61,9 +69,11 @@ class App extends React.Component {
         <Header
           play={this.state.play}
           onPlayButtonClick={this.handlePlayButtonClick}
+          onPlaybackRateChange={this.handlePlaybackRateChange}
         />
         <Component
           play={this.state.play}
+          playbackRate={this.state.playbackRate}
           url={this.state.url}
         />
       </div>

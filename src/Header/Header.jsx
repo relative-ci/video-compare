@@ -5,12 +5,29 @@ import styles from './Header.css';
 
 const Header = ({
   play = false,
-  onPlayButtonClick = noop
+  playbackRate = 1,
+  onPlayButtonClick = noop,
+  onPlaybackRateChange = noop
 }) => {
   const label = play ? 'Pause' : 'Play';
+  const playbackRates = [0.5, 1, 2];
 
   return (
     <header className={styles.root}>
+      <select
+        className={styles.playbackRate}
+        onChange={onPlaybackRateChange}
+        defaultValue={playbackRate}
+      >
+        {playbackRates.map(item => (
+          <option
+            key={item}
+            value={item}
+          >
+            {`${item}x`}
+          </option>
+        ))}
+      </select>
       <button
         className={styles.playButton}
         onClick={onPlayButtonClick}

@@ -7,9 +7,10 @@ const Placeholder = () => (
   <p className={styles.placeholder}>Result</p>
 );
 
-const Entry = ({
+const Result = ({
   url = '',
-  play = false
+  play = false,
+  playbackRate = 1
 }) => {
   if (!url) {
     return <Placeholder />;
@@ -20,10 +21,11 @@ const Entry = ({
       <Video
         url={url}
         play={play}
+        playbackRate={playbackRate}
       />
     </div>
   );
 };
 
-export default Entry;
+export default Result;
 
