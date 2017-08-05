@@ -2,6 +2,7 @@ import React from 'react';
 import qs from 'qs';
 
 import styles from './App.css';
+import Header from '../Header/Header';
 import Result from '../Result/Result';
 
 const AppLoader = () => (
@@ -15,7 +16,7 @@ const AppResults = (props) => {
 
   return (
     <div className={styles.results}>
-      {urls.map((url, id) => (
+      {urls.map(url => (
         <Result
           key={url}
           play={props.play}
@@ -43,9 +44,8 @@ class App extends React.Component {
     this.setState({ url });
   }
 
-  handleButtonClick = (event) => {
+  handlePlayButtonClick = (event) => {
     event.preventDefault();
-
     this.setState({
       play: !this.state.play
     });
@@ -58,14 +58,10 @@ class App extends React.Component {
 
     return (
       <div className={styles.root}>
-        <header className={styles.header}>
-          <button
-            className={styles.playButton}
-            onClick={this.handleButtonClick}
-          >
-            {this.state.play ? 'Pause' : 'Play'}
-          </button>
-        </header>
+        <Header
+          play={this.state.play}
+          onPlayButtonClick={this.handlePlayButtonClick}
+        />
         <Component
           play={this.state.play}
           url={this.state.url}
