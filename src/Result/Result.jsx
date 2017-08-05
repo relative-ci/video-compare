@@ -7,18 +7,20 @@ const Placeholder = () => (
   <p className={styles.placeholder}>Result</p>
 );
 
-const Entry = (props) => {
-  let Component;
-
-  if (!props.url) {
-    Component = Placeholder;
-  } else {
-    Component = Video;
+const Entry = ({
+  url = '',
+  play = false
+}) => {
+  if (!url) {
+    return <Placeholder />;
   }
 
   return (
     <div className={styles.root}>
-      <Component className={styles.placeholder} {...props} />
+      <Video
+        url={url}
+        play={play}
+      />
     </div>
   );
 };

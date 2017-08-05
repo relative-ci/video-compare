@@ -15,7 +15,13 @@ const AppResults = (props) => {
 
   return (
     <div className={styles.results}>
-      {urls.map(url => <Result play={props.play} key={url} url={url} />)}
+      {urls.map((url, id) => (
+        <Result
+          key={url}
+          play={props.play}
+          url={url}
+        />
+      ))}
     </div>
   );
 };
@@ -53,11 +59,17 @@ class App extends React.Component {
     return (
       <div className={styles.root}>
         <header className={styles.header}>
-          <button onClick={this.handleButtonClick}>
+          <button
+            className={styles.playButton}
+            onClick={this.handleButtonClick}
+          >
             {this.state.play ? 'Pause' : 'Play'}
           </button>
         </header>
-        <Component play={this.state.play} url={this.state.url} />
+        <Component
+          play={this.state.play}
+          url={this.state.url}
+        />
       </div>
     );
   }
