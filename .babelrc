@@ -8,5 +8,12 @@
   ],
   "plugins": [
     "transform-class-properties"
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "lodash"
+      ]
+    }
+  }
 }

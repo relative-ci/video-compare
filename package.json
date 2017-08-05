@@ -4,7 +4,7 @@
   "description": "Compare sitespeed.io results",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress -p",
+    "build": "NODE_ENV=production webpack --progress -p --hide-modules",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,7 @@
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-lodash": "^3.2.11",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
@@ -25,6 +26,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.29.0",
     "postcss": "^6.0.8",
     "postcss-loader": "^2.0.6",
@@ -32,10 +34,12 @@
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "lodash": "^4.17.4",
+    "preact": "^8.2.1",
     "qs": "^6.5.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
