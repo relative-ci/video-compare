@@ -1,13 +1,10 @@
 import React from 'react';
 
+import Video from '../Video/Video';
 import styles from './Result.css';
 
 const Placeholder = () => (
   <p className={styles.placeholder}>Result</p>
-);
-
-const Video = ({ className, url = '' }) => (
-  <video className={className} src={url} />
 );
 
 const Entry = (props) => {
