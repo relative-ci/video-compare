@@ -5,16 +5,28 @@ import styles from './Video.css';
 // eslint-disable-next-line react/prefer-stateless-function
 class Video extends React.Component {
   componentWillReceiveProps(nextProps) {
-    if (this.props.play !== nextProps.play) {
-      if (nextProps.play === false) {
-        this.video.pause();
-      } else {
-        this.video.play();
-      }
+    this.updatePlayState(nextProps.play);
+    this.updatePlaybackRate(nextProps.playbackRate);
+  }
+
+  updatePlayState = (newValue) => {
+    if (this.props.play === newValue) {
+      return;
     }
 
-    if (this.props.playbackRate !== nextProps.playbackRate) {
-      this.video.playbackRate = nextProps.playbackRate;
+    if (newValue === false) {
+      this.video.pause();
+      return;
+    }
+
+    if (!this.video.ended) {
+      this.video.play();
+    }
+  }
+
+  updatePlaybackRate = (newValue) => {
+    if (this.props.playbackRate !== newValue) {
+      this.video.playbackRate = newValue;
     }
   }
 
