@@ -3,30 +3,11 @@ import qs from 'qs';
 
 import styles from './App.css';
 import Header from '../Header/Header';
-import Result from '../Result/Result';
+import Results from '../Results/Results';
 
 const AppLoader = () => (
   <p>Loading</p>
 );
-
-const AppResults = (props) => {
-  const urls = Array.isArray(props.url)
-    ? props.url
-    : [props.url];
-
-  return (
-    <div className={styles.results}>
-      {urls.map(url => (
-        <Result
-          key={url}
-          play={props.play}
-          url={url}
-          playbackRate={props.playbackRate}
-        />
-      ))}
-    </div>
-  );
-};
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
@@ -61,7 +42,7 @@ class App extends React.Component {
 
   render() {
     const Component = this.state.url && this.state.url.length !== 0
-      ? AppResults
+      ? Results
       : AppLoader;
 
     return (
