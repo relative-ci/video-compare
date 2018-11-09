@@ -1,6 +1,6 @@
 // eslint-env node
 const StatsPlugin = require('stats-webpack-plugin');
-const MiniCssExtract = require("mini-css-extract-plugin");
+const MiniCssExtract = require('mini-css-extract-plugin');
 
 module.exports = {
   output: {

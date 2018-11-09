@@ -31,6 +31,7 @@ const Header = ({
       <button
         className={styles.playButton}
         onClick={onPlayButtonClick}
+        type="button"
       >
         {label}
       </button>

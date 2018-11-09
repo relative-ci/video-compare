@@ -28,9 +28,10 @@ class App extends React.Component {
   }
 
   handlePlayButtonClick = (event) => {
+    const { play } = this.state;
     event.preventDefault();
     this.setState({
-      play: !this.state.play
+      play: !play
     });
   }
 
@@ -41,21 +42,20 @@ class App extends React.Component {
   }
 
   render() {
-    const Component = this.state.url && this.state.url.length !== 0
-      ? Results
-      : AppLoader;
+    const { play, playbackRate, url } = this.state;
+    const Component = url && url.length !== 0 ? Results : AppLoader;
 
     return (
       <div className={styles.root}>
         <Header
-          play={this.state.play}
+          play={play}
           onPlayButtonClick={this.handlePlayButtonClick}
           onPlaybackRateChange={this.handlePlaybackRateChange}
         />
         <Component
-          play={this.state.play}
-          playbackRate={this.state.playbackRate}
-          url={this.state.url}
+          play={play}
+          playbackRate={playbackRate}
+          url={url}
         />
       </div>
     );
