@@ -1,5 +1,5 @@
 {
-  "name": "video-side-by-side",
+  "name": "video-compare",
   "version": "1.0.0",
   "description": "Play browsertime/webpagetest videos side-by-side",
   "scripts": {
