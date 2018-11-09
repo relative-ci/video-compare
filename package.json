@@ -1,5 +1,5 @@
 {
-  "name": "video-side-by-side",
+  "name": "video-compare",
   "version": "1.0.0",
   "description": "Play browsertime/webpagetest videos side-by-side",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "vio@beanon.com",
   "license": "MIT",
   "devDependencies": {
+    "@relative-ci/agent": "^1.0.0-0",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
@@ -29,6 +30,7 @@
     "html-webpack-plugin": "^2.29.0",
     "postcss": "^6.0.8",
     "postcss-loader": "^2.0.6",
+    "stats-webpack-plugin": "^0.7.0",
     "style-loader": "^0.18.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
