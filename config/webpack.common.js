@@ -1,7 +1,7 @@
 // eslint-env node
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtract = require("mini-css-extract-plugin");
 
 const context = path.join(__dirname, '../src');
 
@@ -36,19 +36,17 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         enforce: 'post',
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                sourceMap: true
-              }
-            },
-            'postcss-loader'
-          ]
-        })
+        use: [
+          isDevelopment ? 'style-loader' : MiniCssExtract.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   },
@@ -57,9 +55,5 @@ module.exports = {
       template: './index.html',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin({
-      filename: '[name].[contenthash:8].css',
-      disable: isDevelopment
-    })
   ]
 };
