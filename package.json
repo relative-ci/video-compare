@@ -1,15 +1,14 @@
 {
-  "name": "sitespeed.io-compare",
+  "name": "video-side-by-side",
   "version": "1.0.0",
-  "description": "Compare sitespeed.io results",
-  "main": "index.js",
+  "description": "Play browsertime/webpagetest videos side-by-side",
   "scripts": {
     "build": "NODE_ENV=production webpack --progress -p --hide-modules",
-    "start": "webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vio@beanon.com",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.25.0",
