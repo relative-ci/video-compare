@@ -10,7 +10,8 @@ class Video extends React.Component {
   }
 
   updatePlayState = (newValue) => {
-    if (this.props.play === newValue) {
+    const { play } = this.props;
+    if (play === newValue) {
       return;
     }
 
@@ -25,16 +26,19 @@ class Video extends React.Component {
   }
 
   updatePlaybackRate = (newValue) => {
-    if (this.props.playbackRate !== newValue) {
+    const { playbackRate } = this.props;
+    if (playbackRate !== newValue) {
       this.video.playbackRate = newValue;
     }
   }
 
   render() {
+    const { url } = this.props;
+
     return (
       <video
         className={styles.root}
-        src={this.props.url}
+        src={url}
         ref={(elm) => { this.video = elm; }}
       />
     );

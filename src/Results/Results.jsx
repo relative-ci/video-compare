@@ -4,18 +4,17 @@ import styles from './Results.css';
 import Result from '../Result/Result';
 
 const Results = (props) => {
-  const urls = Array.isArray(props.url)
-    ? props.url
-    : [props.url];
+  const { play, playbackRate, url } = props;
+  const urls = Array.isArray(url) ? url : [url];
 
   return (
     <div className={styles.root}>
-      {urls.map(url => (
+      {urls.map(entry => (
         <Result
-          key={url}
-          url={url}
-          play={props.play}
-          playbackRate={props.playbackRate}
+          key={entry}
+          url={entry}
+          play={play}
+          playbackRate={playbackRate}
         />
       ))}
     </div>

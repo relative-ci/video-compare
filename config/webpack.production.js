@@ -1,5 +1,6 @@
 // eslint-env node
 const StatsPlugin = require('stats-webpack-plugin');
+const MiniCssExtract = require('mini-css-extract-plugin');
 
 module.exports = {
   output: {
@@ -23,6 +24,10 @@ module.exports = {
     warnings: false
   },
   plugins: [
-    new StatsPlugin('../artifacts/webpack.json')
+    new StatsPlugin('../artifacts/webpack.json'),
+    new MiniCssExtract({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
+    })
   ]
 };
