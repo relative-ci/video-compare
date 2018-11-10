@@ -29,7 +29,7 @@ const Header = ({
         ))}
       </select>
       <button
-        className={styles.playButton}
+        className="ui-button ui-button--small"
         onClick={onPlayButtonClick}
         type="button"
       >
