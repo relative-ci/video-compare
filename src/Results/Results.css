@@ -4,3 +4,22 @@
   display: flex;
   padding: 0.25rem;
 }
+
+.item {
+  margin: 0.25rem;
+  height: calc(100% - 0.5rem);
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  background: #eee;
+}
