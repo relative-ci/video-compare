@@ -4,31 +4,37 @@ import styles from './Video.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Video extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.video = React.createRef();
+    props.addVideo(this.video);
+  }
+
+  componentDidMount() {
+    const { current } = this.video;
+    current.addEventListener('ended', this.onEnded);
+  }
+
   componentWillReceiveProps(nextProps) {
-    this.updatePlayState(nextProps.play);
     this.updatePlaybackRate(nextProps.playbackRate);
   }
 
-  updatePlayState = (newValue) => {
-    const { play } = this.props;
-    if (play === newValue) {
-      return;
-    }
+  componentWillUnmount() {
+    const { current } = this.video();
+    current.removeEventListener('ended', this.onEnded);
+  }
 
-    if (newValue === false) {
-      this.video.pause();
-      return;
-    }
-
-    if (!this.video.ended) {
-      this.video.play();
-    }
+  onEnded = () => {
+    const { setPlayStatus } = this.props;
+    setPlayStatus('ended');
   }
 
   updatePlaybackRate = (newValue) => {
     const { playbackRate } = this.props;
+
     if (playbackRate !== newValue) {
-      this.video.playbackRate = newValue;
+      this.video.current.playbackRate = newValue;
     }
   }
 
@@ -39,7 +45,7 @@ class Video extends React.Component {
       <video
         className={styles.root}
         src={url}
-        ref={(elm) => { this.video = elm; }}
+        ref={this.video}
       />
     );
   }

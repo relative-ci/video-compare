@@ -4,12 +4,12 @@ import { noop } from 'lodash';
 import styles from './Header.css';
 
 const Header = ({
-  play = false,
+  status,
   playbackRate = 1,
   onPlayButtonClick = noop,
   onPlaybackRateChange = noop
 }) => {
-  const label = play ? 'Pause' : 'Play';
+  const label = status === 'play' ? 'Pause' : 'Play';
   const playbackRates = [0.5, 1, 2];
 
   return (
@@ -29,7 +29,7 @@ const Header = ({
         ))}
       </select>
       <button
-        className="ui-button ui-button--small"
+        className={`ui-button ui-button--small ${styles.playButton}`}
         onClick={onPlayButtonClick}
         type="button"
       >
