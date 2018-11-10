@@ -1,7 +1,7 @@
 import React from 'react';
 
+import Video from '../Video/Video';
 import styles from './Results.css';
-import Result from '../Result/Result';
 
 const Results = (props) => {
   const { play, playbackRate, url } = props;
@@ -10,12 +10,16 @@ const Results = (props) => {
   return (
     <div className={styles.root}>
       {urls.map(entry => (
-        <Result
+        <div
           key={entry}
-          url={entry}
-          play={play}
-          playbackRate={playbackRate}
-        />
+          className={styles.item}
+        >
+          <Video
+            url={entry}
+            play={play}
+            playbackRate={playbackRate}
+          />
+        </div>
       ))}
     </div>
   );
