@@ -1,5 +1,6 @@
 // eslint-env node
 const webpackMerge = require('webpack-merge');
+require('dotenv').config();
 
 module.exports = webpackMerge(
   require('./config/webpack.common'),

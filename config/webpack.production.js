@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       __PRODUCTION__: true,
-      __GA__: process.env.GA
+      __GA__: JSON.stringify(process.env.GA)
     }),
     new StatsPlugin('../artifacts/webpack.json'),
     new MiniCssExtract({
