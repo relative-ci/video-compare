@@ -1,13 +1,10 @@
 import React from 'react';
 
 import styles from './App.css';
+import Empty from '../Empty/Empty';
 import Header from '../Header/Header';
 import Results from '../Results/Results';
 import GithubButton from '../GithubButton/GithubButton';
-
-const AppLoader = () => (
-  <p>Loading</p>
-);
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
@@ -94,7 +91,7 @@ class App extends React.Component {
   render() {
     const { playbackRate, urls } = this.state;
     const playStatus = this.getStatus();
-    const Component = urls && urls.length !== 0 ? Results : AppLoader;
+    const Component = urls && urls.length !== 0 ? Results : Empty;
 
     return (
       <div className={styles.root}>
@@ -103,12 +100,14 @@ class App extends React.Component {
           onPlayButtonClick={this.handlePlayButtonClick}
           onPlaybackRateChange={this.handlePlaybackRateChange}
         />
-        <Component
-          playbackRate={playbackRate}
-          urls={urls}
-          getAddVideo={this.getAddVideo}
-          getSetPlayStatus={this.getSetPlayStatus}
-        />
+        <main className={styles.main}>
+          <Component
+            playbackRate={playbackRate}
+            urls={urls}
+            getAddVideo={this.getAddVideo}
+            getSetPlayStatus={this.getSetPlayStatus}
+          />
+        </main>
         <GithubButton />
       </div>
     );
