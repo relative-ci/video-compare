@@ -7,7 +7,7 @@ Side by side playing for [webpagetest](http://webpagetest.org) / [browsertime](h
 
 ---
 
-[Screenshot](./screenshot.jpg)
+![Screenshot](./screenshot.jpg)
 
 ## Usage
 
