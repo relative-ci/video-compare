@@ -1,5 +1,4 @@
 import React from 'react';
-import qs from 'qs';
 
 import styles from './App.css';
 import Header from '../Header/Header';
@@ -24,11 +23,10 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    const { url } = qs.parse(window.location.search.replace(/^\?/, ''));
+    const params = new URLSearchParams(window.location.search);
+    const urls = params.getAll('url');
 
-    this.setState({
-      urls: Array.isArray(url) ? url : [url]
-    });
+    this.setState({ urls });
   }
 
   getStatus = () => {
