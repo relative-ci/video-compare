@@ -1,6 +1,6 @@
 {
   "name": "video-compare",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Play browsertime/webpagetest videos side-by-side",
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production",
