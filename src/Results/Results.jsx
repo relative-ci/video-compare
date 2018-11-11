@@ -4,23 +4,32 @@ import Video from '../Video/Video';
 import styles from './Results.css';
 
 const Results = (props) => {
-  const { play, playbackRate, url } = props;
-  const urls = Array.isArray(url) ? url : [url];
+  const {
+    playbackRate,
+    urls,
+    getAddVideo,
+    getSetPlayStatus
+  } = props;
 
   return (
     <div className={styles.root}>
-      {urls.map(entry => (
-        <div
-          key={entry}
-          className={styles.item}
-        >
-          <Video
-            url={entry}
-            play={play}
-            playbackRate={playbackRate}
-          />
-        </div>
-      ))}
+      {urls.map((url, index) => {
+        const key = index;
+
+        return (
+          <div
+            key={key}
+            className={styles.item}
+          >
+            <Video
+              url={url}
+              playbackRate={playbackRate}
+              addVideo={getAddVideo(index)}
+              setPlayStatus={getSetPlayStatus(index)}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 };

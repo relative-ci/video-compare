@@ -12,9 +12,5 @@
 }
 
 .playButton {
-  padding: 0.6rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 0;
-  background: #eee;
-  color: #333;
+  min-width: 6em;
 }

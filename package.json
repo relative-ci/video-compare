@@ -5,7 +5,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production",
     "lint": "eslint src/**/*.jsx",
-    "start": "NODE_ENV=development webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vio@beanon.com",
