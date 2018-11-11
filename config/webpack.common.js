@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
+const CopyWebpack = require('copy-webpack-plugin')
 
 const context = path.join(__dirname, '../src');
 
@@ -55,5 +56,8 @@ module.exports = {
       template: './index.html',
       filename: 'index.html'
     }),
+    new CopyWebpack([{
+      from: path.join(__dirname, '../public')
+    }])
   ]
 };
