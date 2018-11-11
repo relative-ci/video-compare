@@ -4,6 +4,7 @@ import qs from 'qs';
 import styles from './App.css';
 import Header from '../Header/Header';
 import Results from '../Results/Results';
+import GithubButton from '../GithubButton/GithubButton';
 
 const AppLoader = () => (
   <p>Loading</p>
@@ -110,6 +111,7 @@ class App extends React.Component {
           getAddVideo={this.getAddVideo}
           getSetPlayStatus={this.getSetPlayStatus}
         />
+        <GithubButton />
       </div>
     );
   }

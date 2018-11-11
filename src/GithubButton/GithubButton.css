@@ -1,0 +1,25 @@
+/* http://tholman.com/github-corners/ */
+.root {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.icon {
+  color: #fff;
+}
+
+.background {
+  fill: var(--color-gray);
+}
+
+.octoArm {
+  transform-origin: 130px 106px;
+}
+
+.root:hover .background {
+  fill: var(--color-gray-dark);
+}
