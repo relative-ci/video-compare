@@ -4,10 +4,13 @@ import styles from './Video.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Video extends React.Component {
+  video = {
+    current: null
+  }
+
   constructor(props) {
     super(props);
 
-    this.video = React.createRef();
     props.addVideo(this.video);
   }
 
@@ -45,7 +48,7 @@ class Video extends React.Component {
       <video
         className={styles.root}
         src={url}
-        ref={this.video}
+        ref={(ref) => { this.video.current = ref; }}
       />
     );
   }
