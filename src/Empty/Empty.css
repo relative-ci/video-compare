@@ -10,7 +10,7 @@
 }
 
 .text {
-  margin: var(--space-xsmall) 0 0;
+  margin: var(--space-xxsmall) 0;
   max-width: 100%;
 }
 
