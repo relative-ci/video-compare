@@ -46,8 +46,8 @@
     "ganalytics": "^3.1.1",
     "lodash": "^4.17.11",
     "preact": "^8.3.1",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "react": "^16.6.2",
+    "react-dom": "^16.6.2",
     "url-search-params-polyfill": "^5.0.0"
   }
 }
