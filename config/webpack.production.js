@@ -19,9 +19,9 @@ module.exports = {
     performance: true,
     chunks: true,
     timings: true,
+    modules: true,
     children: false,
     source: false,
-    modules: false,
     warnings: false
   },
   plugins: [
