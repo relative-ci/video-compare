@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Send build stats to Relative CI
-          command: node_modules/.bin/relative-ci-agent --webpack-stats artifacts/webpack.json
+          command: node_modules/.bin/relative-ci-agent
 
       - store_artifacts:
           path: ./artifacts
