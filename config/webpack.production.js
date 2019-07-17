@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const StatsPlugin = require('stats-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
+const { BundleStatsWebpackPlugin } = require('bundle-stats');
 
 module.exports = {
   output: {
@@ -33,6 +34,9 @@ module.exports = {
     new MiniCssExtract({
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
+    }),
+    new BundleStatsWebpackPlugin({
+      outDir: '../artifacts'
     })
   ]
 };
