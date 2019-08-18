@@ -39,7 +39,7 @@
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "webpack": "^4.36.1",
-    "webpack-cli": "^3.2.1",
+    "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   },
