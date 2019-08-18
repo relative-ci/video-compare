@@ -23,7 +23,7 @@
     "bundle-stats": "^1.2.1",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^3.0.0",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.1.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-loader": "^2.2.1",
