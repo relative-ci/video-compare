@@ -2,7 +2,7 @@
 
 Side by side playing for [webpagetest](http://webpagetest.org) / [browsertime](https://github.com/sitespeedio/browsertime) videos.
 
-[![RelativeCI badge](https://img.shields.io/badge/RelativeCI-enabled-brightgreen.svg)](https://app.relative-ci.com/projects/b4Aw1c8IcmcsWvkGDpjX)
+[![relativeCI](https://badges.relative-ci.com/badges/b4Aw1c8IcmcsWvkGDpjX?branch=master)](https://app.relative-ci.com/projects/b4Aw1c8IcmcsWvkGDpjX)
 [![Greenkeeper badge](https://badges.greenkeeper.io/relative-ci/video-compare.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/relative-ci/video-compare.svg?style=svg)](https://circleci.com/gh/relative-ci/video-compare)
 
