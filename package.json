@@ -49,6 +49,6 @@
     "preact": "^10.5.7",
     "react": "^16.6.2",
     "react-dom": "^16.6.2",
-    "url-search-params-polyfill": "^8.0.0"
+    "url-search-params-polyfill": "^8.1.0"
   }
 }
