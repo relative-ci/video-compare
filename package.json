@@ -44,7 +44,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "ganalytics": "^3.1.1",
+    "ganalytics": "^3.1.3",
     "lodash": "^4.17.20",
     "preact": "^10.5.7",
     "react": "^16.6.2",
